@@ -24,6 +24,7 @@ app.delete('/api/removeByEmail/:email', mc.deleteUserByEmail); // Delete user by
 app.put('/api/user', mc.updateUserByBody);
 app.post('/api/users', mc.addNewUser); 
 app.put('/api/user/updateName/:id', mc.updateUserById);
+app.post('/api/newUser', mc.addNewUserQueryBody); // Add a new user object to the users array. The new user's id will be sent as a query. The rest of the info will be sent in the body
 
 
 

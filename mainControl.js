@@ -144,5 +144,18 @@ updateUserById: (req, res) => {
             res.status(200).send(users[i]);
         }
     }
-}
+},
+addNewUserQueryBody: (req, res) => {
+    var newUser = {
+        id: req.query.id,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        make: req.body.make,
+        model: req.body.model,
+        year: req.body.year
+    }
+    users.push(newUser);
+    res.status(200).send(users[users.length -1]);
+    }
 }
