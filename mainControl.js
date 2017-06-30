@@ -136,5 +136,13 @@ addNewUser: (req, res) => {
     };
     users.push(newUser);
     res.status(200).send(users[users.length -1]);
+},
+updateUserById: (req, res) => {
+    for (var i = 0; i < users.length; i++) {
+        if (req.params.id == users[i].id) {
+            users[i].first_name = req.body.first_name;
+            res.status(200).send(users[i]);
+        }
+    }
 }
 }

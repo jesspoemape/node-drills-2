@@ -23,6 +23,7 @@ app.delete('/api/user/:id', mc.deleteUserById); // Delete user by id
 app.delete('/api/removeByEmail/:email', mc.deleteUserByEmail); // Delete user by email address
 app.put('/api/user', mc.updateUserByBody);
 app.post('/api/users', mc.addNewUser); 
+app.put('/api/user/updateName/:id', mc.updateUserById);
 
 
 
