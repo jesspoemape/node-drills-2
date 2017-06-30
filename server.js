@@ -29,7 +29,10 @@ app.get('/api/users', (req, res) => {
         }
     }
     res.send(usersArr);
-    } 
+}
+else {
+    res.send(users)
+} 
 });
 
 // get all users who drive a car newer than given year
@@ -116,11 +119,12 @@ app.put('/api/updateName/:id', (req, res) => {
 // Delete user by id
 app.delete('/api/user/:id', (req, res) => {
     for (var i = 0; i < users.length; i++) {
-        if (users[i].id === req.params.id) {
+        if (req.params.id == users[i].id) {
             users.splice(i, 1);
+            break;
         }
     }
-    res.send(`User with ID of ${req.params.id} has been deleted`);
+    res.status(200).send(users);
 });
 
 
