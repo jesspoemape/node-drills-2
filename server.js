@@ -21,11 +21,11 @@ app.get('/api/userByName/:letter', mc.getUserByLetter); // Get users whose first
 app.put('/api/updateName/:id', mc.updateNedById); // Update users name to 'Ned' by given id
 app.delete('/api/user/:id', mc.deleteUserById); // Delete user by id
 app.delete('/api/removeByEmail/:email', mc.deleteUserByEmail); // Delete user by email address
-app.put('/api/user', mc.updateUserByBody)
+app.put('/api/user', mc.updateUserByBody);
+app.post('/api/users', mc.addNewUser); 
 
 
 
 // =======================================
-
 const port = 3000;
 app.listen(port, () => console.log('Listening on port: ', port));
