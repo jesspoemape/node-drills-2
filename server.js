@@ -127,7 +127,16 @@ app.delete('/api/user/:id', (req, res) => {
     res.status(200).send(users);
 });
 
-
+// Delete user by email address
+app.delete('/api/removeByEmail/:email', (req, res) => {
+        for (var i = 0; i < users.length; i++) {
+        if (req.params.email == users[i].email) {
+            users.splice(i, 1);
+            break;
+        }
+    }
+    res.status(200).send(users);
+});
 
 
 
